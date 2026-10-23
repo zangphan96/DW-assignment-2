@@ -258,6 +258,9 @@ show_tab <- data.frame(
 
 cat("\n===== Summary (mean over simulations) =====\n")
 print(show_tab, row.names = FALSE)
+# Save the summary in summary.csv file
+write.csv(show_tab, file.path(OUT_DIR, "summary.csv"), row.names = FALSE)
+
 if (interactive()) View(show_tab, "missForest summary")   # table tab in RStudio
 
 ## ---------------------------------------------------------------------------
